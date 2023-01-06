@@ -17,8 +17,8 @@ public class PasswordValidator {
         if (password.length() < 8 || password.length() > 32) {
             throw new IllegalArgumentException("Password should be length [8, 32]");
         }
-
         String[] words = {"qwerty", "12345", "password", "admin", "user"};
+
         for (String word : words) {
             if (password.toLowerCase().contains(word.toLowerCase())) {
                 throw new IllegalArgumentException("Password shouldn't contain substrings: qwerty, 12345, password, admin, user");
