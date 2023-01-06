@@ -28,3 +28,4 @@ public class AppleStore {
         return last != null ? last.name() : "";
     }
 }
+
