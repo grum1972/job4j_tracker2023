@@ -26,20 +26,17 @@ public class PasswordValidator {
         }
 
         for (int i = 0; i < password.length(); i++) {
+            if (hasDigit && hasLowerCaseLetter && hasUpperCaseLetter && hasSpecialSymbol) {
+                break;
+            }
             int symbol = password.charAt(i);
             if (isDigit(symbol)) {
                 hasDigit = true;
-                continue;
-            }
-            if (isLowerCase(symbol)) {
+            } else if (isLowerCase(symbol)) {
                 hasLowerCaseLetter = true;
-                continue;
-            }
-            if (isUpperCase(symbol)) {
+            } else if (isUpperCase(symbol)) {
                 hasUpperCaseLetter = true;
-                continue;
-            }
-            if (!isLetter(symbol) && !isDigit(symbol)) {
+            } else if (!isLetter(symbol) && !isDigit(symbol)) {
                 hasSpecialSymbol = true;
             }
         }
